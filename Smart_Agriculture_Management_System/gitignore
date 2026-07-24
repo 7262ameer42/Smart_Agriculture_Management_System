@@ -1,0 +1,18 @@
+# Logs and temp files
+*.log
+*.tmp
+
+# MySQL Workbench backups
+*.mwb.bak
+*.autosave
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Environment files
+.env

@@ -1,94 +1,68 @@
-# Smart Agriculture System (SQL Project)
+# 🌾 Smart Agriculture Database Management System
 
-A relational database project that models a smart agriculture management system — tracking farmers, their farms, crops grown, yield records, and an auto-generated audit log for new yield entries.
+![MySQL](https://img.shields.io/badge/Database-MySQL-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
-## Overview
-This project demonstrates core to advanced SQL concepts using a real-world agriculture scenario:
-- Farmers register and own one or more farms
-- Each farm grows one or more crops
-- Each crop has associated yield (harvest quantity) records
-- A trigger automatically logs every new yield entry into an audit table
+## 📖 Description
 
-## Database Schema
+A MySQL database project developed to manage **farmers, farms, crops, and crop yield data**. The system tracks which farmer owns which farm, what crops are grown on each farm, their growth status, and the yield produced — while automatically logging every new yield entry through a trigger.
 
-![ER Diagram](docs/er_diagram.svg)
+This project demonstrates core relational database concepts including table design, referential integrity, joins, views, stored procedures, and triggers.
 
-**Tables:**
+## ✨ Features
+
+- ✅ CRUD Operations (Create, Read, Update, Delete)
+- ✅ Aggregate Functions (`COUNT`, `SUM`, `AVG`, `MAX`, `MIN`)
+- ✅ Multi-table `INNER JOIN` queries
+- ✅ `VIEW` for simplified crop reporting
+- ✅ Stored Procedure (`CropReport`)
+- ✅ Trigger (`YieldLog`) for automatic audit logging
+- ✅ Audit Log table to track system activity
+
+## 🗄️ Database Tables
+
 | Table | Description |
 |---|---|
 | `Farmer` | Stores farmer details (name, contact) |
-| `Farm` | Farms owned by a farmer, linked via `FarmerID` |
-| `Crop` | Crops grown on a farm, linked via `FarmID`, tracks growth `Status` |
-| `YieldData` | Harvest quantity per crop, linked via `CropID` |
-| `AuditLog` | Auto-populated log of new yield entries (via trigger) |
+| `Farm` | Farms owned by farmers, linked via `FarmerID` |
+| `Crop` | Crops grown on each farm, linked via `FarmID` |
+| `YieldData` | Yield quantity recorded per crop, linked via `CropID` |
+| `AuditLog` | Automatically logs new yield entries via trigger |
 
-**Relationships:**
-- `Farmer` (1) → (N) `Farm`
-- `Farm` (1) → (N) `Crop`
-- `Crop` (1) → (N) `YieldData`
-- `YieldData` inserts → auto-logged into `AuditLog` (via trigger)
+**Relationships:** `Farmer (1) → (M) Farm (1) → (M) Crop (1) → (M) YieldData`
 
-## Features Demonstrated
-- ✅ Table creation with `PRIMARY KEY` / `FOREIGN KEY` constraints
-- ✅ Data insertion (`INSERT`)
-- ✅ Filtering & sorting (`WHERE`, `ORDER BY`)
-- ✅ Aggregate functions (`COUNT`, `SUM`)
-- ✅ Joins (`JOIN` between Farmer and Farm)
-- ✅ Data updates & deletion (`UPDATE`, `DELETE`)
-- ✅ Views (`CREATE VIEW`)
-- ✅ Stored procedures (`CropReport`)
-- ✅ Triggers (`YieldLog` — auto audit logging on new yield insert)
+## 🖼️ ER Diagram
 
-## Sample Queries
+See [`database/ER_Diagram.png`](database/ER_Diagram.png) for the full entity-relationship diagram, and [`database/Database_Schema.pdf`](database/Database_Schema.pdf) for detailed schema documentation.
 
-**Get all healthy crops:**
-```sql
-SELECT * FROM Crop
-WHERE Status = 'Healthy';
-```
+## 🛠️ Technologies Used
 
-**Total yield across all crops:**
-```sql
-SELECT SUM(Quantity) AS TotalYield FROM YieldData;
-```
+- MySQL
+- MySQL Workbench
+- SQL (DDL, DML, DQL, Views, Stored Procedures, Triggers)
 
-**Farmer + Farm join:**
-```sql
-SELECT Name, FarmName
-FROM Farmer
-JOIN Farm ON Farmer.FarmerID = Farm.FarmerID;
-```
+## ▶️ How to Run
 
-*(Add your query result screenshots here, e.g. `screenshots/query_result_1.png`)*
+1. Open MySQL Workbench (or any MySQL client).
+2. Open `database/SmartAgricultureDB.sql`.
+3. Execute the script (this drops any existing copy, creates the database, all tables, sample data, and objects).
+4. The database and all tables, views, procedures, and triggers will be created automatically.
+5. Run `CALL CropReport();` to test the stored procedure.
+6. Insert a new row into `YieldData` and check `SELECT * FROM AuditLog;` to see the trigger in action.
 
-## Tools Used
-- MySQL (uses `AUTO_INCREMENT`, `DELIMITER` syntax for procedures/triggers)
-- MySQL Workbench / any MySQL-compatible client
+## 📸 Sample Output
 
-## How to Run
-1. Open MySQL Workbench (or any MySQL client / CLI)
-2. Run the script:
-   ```bash
-   mysql -u root -p < schema.sql
-   ```
-   or open `schema.sql` in Workbench and execute it top to bottom
-3. Explore the data:
-   ```sql
-   USE SmartAgricultureDB;
-   SELECT * FROM CropView;
-   CALL CropReport();
-   ```
+Screenshots of table data, join query results, view output, stored procedure output, and trigger output are available in the [`screenshots/`](screenshots/) folder.
 
-## Project Structure
-```
-smart-agriculture-system/
-├── README.md
-├── schema.sql
-├── docs/
-│   └── er_diagram.svg
-└── screenshots/
-    └── (add your query output screenshots here)
-```
+## 📄 Project Report
 
-## Author
-Add your name / GitHub profile link here.
+A detailed project report is available at [`docs/Project_Report.pdf`](docs/Project_Report.pdf).
+
+## 👤 Author
+
+**Muhammad Ameer Abdullah**
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).

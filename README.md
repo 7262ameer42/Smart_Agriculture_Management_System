@@ -53,7 +53,7 @@ See [`database/ER_Diagram.png`](https://github.com/7262ameer42/Smart_Agriculture
 
 ## 📸 Sample Output
 
-Screenshots of table data, join query results, view output, stored procedure output, and trigger output are available in the [`screenshots/`](screenshots/) folder.
+Screenshots of table data, join query results, view output, stored procedure output, and trigger output are available in the [`screenshots/`](https://github.com/7262ameer42/Smart_Agriculture_Management_System/tree/main/Smart_Agriculture_Management_System/Screenshots) folder.
 
 ## 📄 Project Report
 

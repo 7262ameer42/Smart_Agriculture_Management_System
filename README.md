@@ -34,7 +34,7 @@ This project demonstrates core relational database concepts including table desi
 
 ## 🖼️ ER Diagram
 
-See [`database/ER_Diagram.png`](database/ER_Diagram.png) for the full entity-relationship diagram, and [`database/Database_Schema.pdf`](database/Database_Schema.pdf) for detailed schema documentation.
+See [`database/ER_Diagram.png`](https://github.com/7262ameer42/Smart_Agriculture_Management_System/blob/main/Smart_Agriculture_Management_System/ER%20Diagram.mwb) for the full entity-relationship diagram, and [`database/Database_Schema.pdf`](https://github.com/7262ameer42/Smart_Agriculture_Management_System/blob/main/Smart_Agriculture_Management_System/SmartAgricultureDB_Schema_Documentation.pdf) for detailed schema documentation.
 
 ## 🛠️ Technologies Used
 

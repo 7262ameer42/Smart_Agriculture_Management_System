@@ -57,7 +57,7 @@ Screenshots of table data, join query results, view output, stored procedure out
 
 ## 📄 Project Report
 
-A detailed project report is available at [`docs/Project_Report.pdf`](docs/Project_Report.pdf).
+A detailed project report is available at [`docs/Project_Report.pdf`](https://github.com/7262ameer42/Smart_Agriculture_Management_System/blob/main/Smart_Agriculture_Management_System/Project_Report.pdf).
 
 ## 👤 Author
 
@@ -65,4 +65,4 @@ A detailed project report is available at [`docs/Project_Report.pdf`](docs/Proje
 
 ## 📜 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](https://github.com/7262ameer42/Smart_Agriculture_Management_System/blob/main/Smart_Agriculture_Management_System/LICENSE).

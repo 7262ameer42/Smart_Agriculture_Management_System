@@ -63,6 +63,7 @@ A detailed project report is available at [`docs/Project_Report.pdf`](https://gi
 
 **Muhammad Ameer Abdullah**
 
+
 ## 📜 License
 
 This project is licensed under the [MIT License](https://github.com/7262ameer42/Smart_Agriculture_Management_System/blob/main/Smart_Agriculture_Management_System/LICENSE).
